@@ -1,4 +1,8 @@
 package com.tengerine.coffee_manager.model;
 
-public class OrderItem {
+import java.util.UUID;
+
+public record OrderItem(
+   UUID productId, Category category, long price, int quantity
+) {
 }
