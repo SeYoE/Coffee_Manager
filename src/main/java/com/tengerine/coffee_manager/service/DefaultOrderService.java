@@ -22,7 +22,14 @@ public class DefaultOrderService implements OrderService {
 
     @Override
     public Order createOrder(Email email, String address, String postcode, List<OrderItem> orderItems) {
-        Order order = new Order(UUID.randomUUID(), email, address, postcode, orderItems, OrderStatus.ACCEPTED, LocalDateTime.now(), LocalDateTime.now());
+        Order order = new Order(UUID.randomUUID(),
+                email,
+                address,
+                postcode,
+                orderItems,
+                OrderStatus.ACCEPTED,
+                LocalDateTime.now(),
+                LocalDateTime.now());
         return orderRepository.insert(order);
     }
 
